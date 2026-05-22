@@ -11,7 +11,7 @@ export const metadata = {
   },
 
   description:
-    'D/vox Drywall São Paulo: execução de drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo e região.',
+    'D/vox Drywall São Paulo: execução de drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo.',
 
   keywords: [
     'drywall em São Paulo',
@@ -69,7 +69,7 @@ icons: {
     siteName: 'D/vox Drywall São Paulo',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image-2026.jpg',
         width: 1200,
         height: 630,
         alt: 'D/vox Drywall São Paulo - drywall, forro modular e acabamentos',
@@ -82,7 +82,7 @@ icons: {
     title: 'D/vox Drywall São Paulo | Drywall e Acabamentos',
     description:
       'Drywall, forro modular, divisórias, sancas, reformas e acabamentos em São Paulo e região.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image-2026.jpg'],
   },
 };
 
