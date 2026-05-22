@@ -15,9 +15,3 @@ npm run dev
 npm run build
 npm run start
 ```
-
-## Ajustes importantes
-
-- Trocar o domínio em `metadataBase` no arquivo `app/layout.js` quando o domínio final estiver definido.
-- Trocar as imagens em `public/assets` por imagens reais de obras do cliente quando disponíveis.
-- Cadastrar o domínio no Google Search Console e enviar `/sitemap.xml`.
