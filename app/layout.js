@@ -1,29 +1,48 @@
 import './globals.css';
 
-const siteUrl = 'https://dvoxdrywallsp.com.br';
+const siteUrl = 'https://dvoxdrywall.vercel.app/';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
-    default: 'D/vox Drywall São Paulo | Drywall, Gesso, Forro e Reformas',
+    default: 'D/vox Drywall São Paulo | Drywall, Forro Modular, Gesso e Reformas',
     template: '%s | D/vox Drywall São Paulo',
   },
+
   description:
-    'D/vox Drywall São Paulo: drywall, acabamentos, forro modular, gesso, sancas, iluminação, divisórias, reformas e projetos com alto padrão em São Paulo e região.',
+    'D/vox Drywall São Paulo: execução de drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo e região.',
+
   keywords: [
     'drywall em São Paulo',
     'empresa de drywall SP',
+    'forro modular São Paulo',
     'forro de gesso São Paulo',
-    'forro modular SP',
+    'divisórias drywall',
     'paredes de drywall',
-    'divisórias de drywall',
     'sancas de gesso',
+    'steel frame São Paulo',
+    'reformas comerciais São Paulo',
     'acabamento em drywall',
-    'reformas em São Paulo',
+    'drywall residencial',
+    'drywall comercial',
+    'drywall industrial',
+    'galpões industriais',
+    'obras corporativas',
   ],
+
   authors: [{ name: 'D/vox Drywall São Paulo' }],
   creator: 'D/vox Drywall São Paulo',
   publisher: 'D/vox Drywall São Paulo',
+
+icons: {
+  icon: [
+    { url: '/favicon.ico', type: 'image/x-icon' },
+  ],
+  shortcut: '/favicon.ico',
+  apple: '/favicon.ico',
+},
+
   robots: {
     index: true,
     follow: true,
@@ -35,32 +54,35 @@ export const metadata = {
       'max-video-preview': -1,
     },
   },
+
   alternates: {
     canonical: '/',
   },
+
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     url: siteUrl,
     title: 'D/vox Drywall São Paulo | Acabamentos que transformam',
     description:
-      'Soluções profissionais em drywall, gesso, forro modular, sancas, divisórias, reformas e acabamentos em São Paulo e região.',
+      'Drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo e região.',
     siteName: 'D/vox Drywall São Paulo',
     images: [
       {
-        url: '/assets/dvox-post-institucional.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'D/vox Drywall São Paulo - serviços de drywall e acabamentos',
+        alt: 'D/vox Drywall São Paulo - drywall, forro modular e acabamentos',
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'D/vox Drywall São Paulo | Drywall e Acabamentos',
     description:
-      'Drywall, gesso, forro modular, sancas, divisórias e reformas em São Paulo e região.',
-    images: ['/assets/dvox-post-institucional.png'],
+      'Drywall, forro modular, divisórias, sancas, reformas e acabamentos em São Paulo e região.',
+    images: ['/og-image.jpg'],
   },
 };
 
@@ -70,10 +92,9 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#07152b" />
         <meta name="format-detection" content="telephone=yes" />
-        <script
-          src="https://cdn.tailwindcss.com"
-          strategy="beforeInteractive"
-        />
+
+        <script src="https://cdn.tailwindcss.com" />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -91,8 +112,14 @@ export default function RootLayout({ children }) {
                       glow: '0 24px 80px rgba(215,25,32,.18)'
                     },
                     keyframes: {
-                      float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
-                      reveal: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
+                      float: { 
+                        '0%,100%': { transform: 'translateY(0)' }, 
+                        '50%': { transform: 'translateY(-12px)' } 
+                      },
+                      reveal: { 
+                        '0%': { opacity: 0, transform: 'translateY(24px)' }, 
+                        '100%': { opacity: 1, transform: 'translateY(0)' } 
+                      }
                     },
                     animation: {
                       float: 'float 5s ease-in-out infinite',
@@ -105,7 +132,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="bg-white text-dvoxText antialiased">{children}</body>
+
+      <body className="bg-white text-dvoxText antialiased">
+        {children}
+      </body>
     </html>
   );
 }
