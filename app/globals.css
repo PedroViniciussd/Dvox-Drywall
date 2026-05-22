@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+html { scroll-padding-top: 90px; }
+body { margin: 0; }
+::selection { background: #D71920; color: #fff; }
+.reveal { opacity: 0; animation: reveal .8s ease forwards; }
+.glass { background: rgba(255,255,255,.82); backdrop-filter: blur(18px); }
+.bg-grid {
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
