@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   FaWhatsapp,
@@ -11,6 +11,8 @@ import {
   FaMapMarkerAlt,
   FaBars,
   FaTimes,
+  FaArrowUp,
+  FaPaperPlane,
 } from 'react-icons/fa';
 
 const whatsapp =
@@ -59,10 +61,17 @@ const cities = [
   'Guarulhos',
   'Osasco',
   'Barueri',
-  'ABC Paulista',
+  'Santo André',
+  'São Bernardo do Campo',
+  'São Caetano do Sul',
   'Taboão da Serra',
   'Cotia',
-  'Região Metropolitana',
+  'Campinas',
+  'Sorocaba',
+  'Jundiaí',
+  'Ribeirão Preto',
+  'São José dos Campos',
+  'Interior de São Paulo',
 ];
 
 const gallery = Array.from(
@@ -115,7 +124,7 @@ const projects = [
     title: 'Reforma residencial de alto padrão',
     category: 'Residencial',
     size: 'Projeto personalizado',
-    location: 'São Paulo e região',
+    location: 'São Paulo e região paulista',
     description:
       'Projeto residencial com foco em acabamento de alto padrão, utilizando soluções em gesso, sancas, iluminação, drywall e modernização de ambientes para entregar um resultado sofisticado e funcional.',
     services: ['Sancas', 'Iluminação', 'Drywall', 'Gesso', 'Alto padrão'],
@@ -179,8 +188,8 @@ function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'D/vox Drywall São Paulo',
-    description:
-      'Empresa de drywall, gesso, forro modular, sancas, divisórias, reformas e acabamentos em São Paulo e região.',
+ description:
+  'Empresa especializada em drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo capital, Grande São Paulo e interior paulista.',
     areaServed: cities,
     telephone: '+55 11 96543-1342',
     email: 'diegodvox@gmail.com',
@@ -190,7 +199,7 @@ function JsonLd() {
       addressRegion: 'SP',
       addressCountry: 'BR',
     },
-    url: 'https://dvoxdrywallsp.com.br',
+    url: 'https://dvoxdrywall.vercel.app',
     sameAs: ['https://www.instagram.com/dvoxdrywallsp/'],
     serviceType: services.map((item) => item.title),
   };
@@ -202,6 +211,44 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImage, setCurrentImage] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [whatsappBoxOpen, setWhatsappBoxOpen] = useState(false);
+const [whatsappSubject, setWhatsappSubject] = useState('');
+const [whatsappMessage, setWhatsappMessage] = useState('');
+
+const [showScrollTop, setShowScrollTop] = useState(false);
+useEffect(() => {
+  function handleScroll() {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    const reachedBottom =
+      scrollTop + windowHeight >= documentHeight - 300;
+
+    setShowScrollTop(reachedBottom);
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+
+
+function sendWhatsappMessage() {
+  const subject = whatsappSubject.trim();
+  const message = whatsappMessage.trim();
+
+  if (!subject || !message) return;
+
+  const text = `*${subject}*\n\n${message}`;
+
+  window.open(
+    `https://wa.me/5511965431342?text=${encodeURIComponent(text)}`,
+    '_blank'
+  );
+}
 
 const projectsCarouselRef = useRef(null);
 
@@ -246,7 +293,7 @@ function scrollProjects(direction) {
    <div className="fixed inset-x-0 top-0 z-50">
   {/* TOP BAR */}
   <div className="bg-[#d71920] px-4 py-2 text-white">
-    <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 text-xs font-bold md:justify-between md:px-6">
+    <div className="mx-auto flex max-w-7xl items-center justify-center gap-7 text-xs font-bold md:justify-between md:px-6">
       <a href={whatsapp} className="flex items-center gap-2 transition hover:text-white/80">
         <FaWhatsapp className="text-base" />
         <span>(11) 96543-1342</span>
@@ -355,7 +402,7 @@ function scrollProjects(direction) {
         Atendimento completo para obras residenciais, comerciais,
         corporativas, industriais e prediais, com execução de drywall,
         forro modular, sancas, divisórias, steel frame e acabamentos em
-        São Paulo e região.
+        São Paulo capital, Grande São Paulo e interior paulista.
       </p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -403,7 +450,10 @@ function scrollProjects(direction) {
               Execução completa para obras, reformas e acabamentos
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Execução de obras pequenas, médias e grandes com equipe especializada para atender residências, empresas, galpões industriais, prediais, comércios, escritórios e projetos corporativos em São Paulo.
+Execução de obras pequenas, médias e grandes para residências,
+empresas, galpões industriais, obras prediais, comércios,
+escritórios e projetos corporativos em São Paulo capital,
+Grande São Paulo e cidades do interior paulista.
             </p>
           </div>
 
@@ -446,7 +496,7 @@ function scrollProjects(direction) {
                 Drywall, gesso e acabamento com padrão elevado em cada detalhe.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-100">
-                A D/vox Drywall executa projetos residenciais e comerciais com planejamento,
+                A D/vox Drywall executa projetos residenciais, comerciais e prediais com planejamento,
                 organização e acabamento limpo.
               </p>
             </div>
@@ -466,10 +516,10 @@ function scrollProjects(direction) {
       </h2>
 
       <p className="mt-6 max-w-2xl text-lg leading-9 text-slate-600">
-        A D/vox Drywall atua em obras residenciais, comerciais,
-        corporativas, industriais e prediais, entregando soluções completas
-        em drywall, forro modular, divisórias, sancas e acabamentos com alto
-        padrão de execução em São Paulo e região.
+A D/vox Drywall atua em obras residenciais, comerciais,
+corporativas, industriais e prediais, entregando soluções completas
+em drywall, forro modular, divisórias, sancas e acabamentos
+para clientes em São Paulo capital, Grande São Paulo e interior de SP.
       </p>
 
       <div className="mt-10 space-y-6">
@@ -529,7 +579,7 @@ function scrollProjects(direction) {
       <p className="mt-5 text-lg leading-8 text-slate-600">
         Conheça projetos de drywall, forro modular, forro em gesso, divisórias,
         steel frame, sancas, iluminação e acabamentos executados pela D/vox Drywall
-        em São Paulo e região.
+        em São Paulo capital, Grande São Paulo e interior paulista.
       </p>
     </div>
 
@@ -664,13 +714,17 @@ function scrollProjects(direction) {
               <span className="font-black uppercase tracking-[.25em] text-[#ef4444]">Drywall em São Paulo</span>
 
               <h2 className="mt-5 text-3xl font-black leading-tight md:text-6xl">
-                Empresa especializada em drywall, forro de gesso e divisórias em São Paulo.
+                Empresa especializada em drywall, forro de gesso,
+forro modular, divisórias e acabamentos em São Paulo,
+Grande São Paulo e interior paulista.
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-100">
-                A D/vox Drywall atua com instalação de drywall, forro modular,
-                sancas, iluminação, divisórias em gesso, reformas comerciais,
-                acabamentos residenciais e projetos corporativos.
+A D/vox Drywall atua com instalação de drywall,
+forro modular, sancas, iluminação, divisórias,
+steel frame, reformas comerciais, obras prediais,
+galpões industriais e acabamentos residenciais
+em todo o estado de São Paulo.
               </p>
             </div>
           </div>
@@ -682,7 +736,7 @@ function scrollProjects(direction) {
           <span className="font-black uppercase tracking-[.25em] text-[#d71920]">Atendimento local</span>
 
           <h2 className="mt-4 text-3xl font-black text-[#061b35] md:text-5xl">
-            Drywall em São Paulo e região
+            Atendimento em São Paulo, Grande SP e interior paulista
           </h2>
 
           <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-3">
@@ -749,9 +803,10 @@ function scrollProjects(direction) {
 </div>
 
         <p className="mt-6 max-w-md leading-8 text-slate-300">
-          D/vox Drywall São Paulo — Drywall, gesso, forro modular,
-          sancas, divisórias e reformas residenciais, comerciais e
-          corporativas com acabamento de alto padrão.
+D/vox Drywall São Paulo — Empresa especializada em drywall,
+forro modular, divisórias, sancas, steel frame e acabamentos
+para obras residenciais, comerciais, corporativas, industriais
+e prediais em São Paulo capital, Grande São Paulo e interior paulista.
         </p>
       </div>
 
@@ -985,6 +1040,88 @@ function scrollProjects(direction) {
           </div>
         </div>
       )}
+
+      {/* BOTÕES FLUTUANTES */}
+
+{/* BOTÃO VOLTAR AO TOPO */}
+<div
+  className={`fixed bottom-5 left-5 z-[998] transition-all duration-500 ${
+    showScrollTop
+      ? 'translate-y-0 opacity-100'
+      : 'pointer-events-none translate-y-10 opacity-0'
+  }`}
+>
+  <button
+    type="button"
+    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    className="rounded-full border border-white/10 bg-[#06111f]/95 px-2 py-2 text-white shadow-2xl backdrop-blur transition hover:-translate-y-1 hover:bg-[#d71920]"
+    aria-label="Voltar ao topo"
+  >
+    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+      <FaArrowUp className="text-sm" />
+    </div>
+  </button>
+</div>
+
+<div className="fixed bottom-5 right-5 z-[998]">
+  {whatsappBoxOpen && (
+    <div className="mb-4 w-[320px] rounded-3xl border border-white/10 bg-[#06111f] p-5 text-white shadow-2xl">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm font-black uppercase tracking-[.18em] text-[#25D366]">
+            WhatsApp
+          </p>
+          <h3 className="mt-1 text-lg font-black">
+            Enviar mensagem
+          </h3>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setWhatsappBoxOpen(false)}
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-[#d71920]"
+          aria-label="Fechar WhatsApp"
+        >
+          <FaTimes />
+        </button>
+      </div>
+
+      <input
+        type="text"
+        value={whatsappSubject}
+        onChange={(e) => setWhatsappSubject(e.target.value)}
+        placeholder="Assunto da mensagem"
+        className="mt-5 w-full rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/50 focus:border-[#25D366]"
+      />
+
+      <textarea
+        value={whatsappMessage}
+        onChange={(e) => setWhatsappMessage(e.target.value)}
+        placeholder="Digite sua mensagem"
+        rows={4}
+        className="mt-3 w-full resize-none rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/50 focus:border-[#25D366]"
+      />
+
+      <button
+        type="button"
+        onClick={sendWhatsappMessage}
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-green-600"
+      >
+        <FaPaperPlane />
+        Enviar no WhatsApp
+      </button>
+    </div>
+  )}
+
+  <button
+    type="button"
+    onClick={() => setWhatsappBoxOpen(!whatsappBoxOpen)}
+    className="flex h-9 w-9 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl transition hover:-translate-y-1 hover:bg-green-600"
+    aria-label="Abrir WhatsApp"
+  >
+    <FaWhatsapp />
+  </button>
+</div>
     </main>
   );
 }
