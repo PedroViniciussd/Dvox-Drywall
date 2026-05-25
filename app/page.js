@@ -184,27 +184,65 @@ function Logo() {
 }
 
 function JsonLd() {
-  const data = {
+  const localBusinessData = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+
     name: 'D/vox Drywall São Paulo',
- description:
-  'Empresa especializada em drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo capital, Grande São Paulo e interior paulista.',
+
+    description:
+      'Empresa especializada em drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo capital, Grande São Paulo e interior paulista.',
+
     areaServed: cities,
+
     telephone: '+55 11 96543-1342',
+
     email: 'diegodvox@gmail.com',
+
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'São Paulo',
       addressRegion: 'SP',
       addressCountry: 'BR',
     },
+
     url: 'https://dvoxdrywall.com.br',
-    sameAs: ['https://www.instagram.com/dvoxdrywallsp/'],
+
+    sameAs: [
+      'https://www.instagram.com/dvoxdrywallsp/',
+    ],
+
     serviceType: services.map((item) => item.title),
   };
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  const websiteData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+
+    name: 'D/vox Drywall São Paulo',
+
+    alternateName: 'D/vox Drywall',
+
+    url: 'https://dvoxdrywall.com.br',
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessData),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteData),
+        }}
+      />
+    </>
+  );
 }
 
 export default function Home() {
