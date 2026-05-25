@@ -9,6 +9,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaMapMarkerAlt,
+  FaBars,
+  FaTimes,
 } from 'react-icons/fa';
 
 const whatsapp =
@@ -199,12 +201,7 @@ function JsonLd() {
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImage, setCurrentImage] = useState(0);
-
-
-
-
-
-
+  const [menuOpen, setMenuOpen] = useState(false);
 
 const projectsCarouselRef = useRef(null);
 
@@ -247,12 +244,15 @@ function scrollProjects(direction) {
       <JsonLd />
 
    <div className="fixed inset-x-0 top-0 z-50">
+  {/* TOP BAR */}
   <div className="bg-[#d71920] px-4 py-2 text-white">
-    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-xs font-bold sm:flex-row md:px-6">
+    <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 text-xs font-bold md:justify-between md:px-6">
       <a href={whatsapp} className="flex items-center gap-2 transition hover:text-white/80">
         <FaWhatsapp className="text-base" />
         <span>(11) 96543-1342</span>
       </a>
+
+      <span className="text-white/60 md:hidden">|</span>
 
       <div className="flex items-center gap-2">
         <FaMapMarkerAlt className="text-sm" />
@@ -261,14 +261,18 @@ function scrollProjects(direction) {
     </div>
   </div>
 
+  {/* HEADER */}
   <header className="border-b border-white/10 bg-[#06111f]/95 backdrop-blur-xl">
-    <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6" aria-label="Menu principal">
+    <nav
+      className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6"
+      aria-label="Menu principal"
+    >
       <div className="flex items-center gap-4">
-        <div className="flex h-[6.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
+        <div className="flex h-[5.5rem] w-[6.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl md:h-[6.5rem] md:w-[7.5rem]">
           <img
             src="/assets/dvox-logo.png"
             alt="Logo D/vox Drywall São Paulo"
-            className="h-[6rem] w-auto object-contain"
+            className="h-[5rem] w-auto object-contain md:h-[6rem]"
           />
         </div>
       </div>
@@ -282,11 +286,39 @@ function scrollProjects(direction) {
 
       <a
         href={whatsapp}
-        className="rounded-full bg-[#d71920] px-5 py-3 text-sm font-black text-white shadow-[0_18px_45px_rgba(215,25,32,.35)] transition hover:-translate-y-0.5 hover:bg-red-700"
+        className="hidden rounded-full bg-[#d71920] px-5 py-3 text-sm font-black text-white shadow-[0_18px_45px_rgba(215,25,32,.35)] transition hover:-translate-y-0.5 hover:bg-red-700 md:inline-flex"
       >
         Orçamento
       </a>
+
+      <button
+        type="button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white md:hidden"
+        aria-label="Abrir menu"
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
     </nav>
+
+    {menuOpen && (
+      <div className="border-t border-white/10 bg-[#06111f] px-4 py-5 md:hidden">
+        <div className="flex flex-col gap-4 text-sm font-bold text-white">
+          <a onClick={() => setMenuOpen(false)} href="#servicos">Serviços</a>
+          <a onClick={() => setMenuOpen(false)} href="#diferenciais">Diferenciais</a>
+          <a onClick={() => setMenuOpen(false)} href="#projetos">Projetos</a>
+          <a onClick={() => setMenuOpen(false)} href="#contato">Contato</a>
+
+          <a
+            onClick={() => setMenuOpen(false)}
+            href={whatsapp}
+            className="mt-2 rounded-full bg-[#d71920] px-5 py-3 text-center font-black text-white"
+          >
+            Solicitar orçamento
+          </a>
+        </div>
+      </div>
+    )}
   </header>
 </div>
 <section
@@ -422,7 +454,7 @@ function scrollProjects(direction) {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#f5f7fb] px-4 py-24 md:px-6">
+      <section id="diferenciais" className="relative z-10 bg-[#f5f7fb] px-4 py-24 md:px-6">
   <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
     <div>
       <span className="font-black uppercase tracking-[.3em] text-[#d71920]">
