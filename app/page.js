@@ -492,7 +492,7 @@ Grande São Paulo e cidades do interior paulista.
           <div className="mx-auto max-w-7xl px-4 md:px-6">
             <div className="max-w-7xl">
               <span className="font-black uppercase tracking-[.25em] text-[#ef4444]">Acabamento profissional</span>
-              <h2 className="mt-5 text-3xl font-black leading-tight md:text-6xl">
+              <h2 className="mt-5 text-3xl font-black leading-tight md:text-5xl">
                 Drywall, gesso e acabamento com padrão elevado em cada detalhe.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-100">
@@ -511,7 +511,7 @@ Grande São Paulo e cidades do interior paulista.
         Diferenciais
       </span>
 
-      <h2 className="mt-4 text-4xl font-black leading-tight text-[#06111f] md:text-6xl">
+      <h2 className="mt-4 text-4xl font-black leading-tight text-[#06111f] md:text-5xl">
         Por que empresas e clientes escolhem a D/vox Drywall?
       </h2>
 
@@ -713,7 +713,7 @@ para clientes em São Paulo capital, Grande São Paulo e interior de SP.
             <div className="max-w-7xl">
               <span className="font-black uppercase tracking-[.25em] text-[#ef4444]">Drywall em São Paulo</span>
 
-              <h2 className="mt-5 text-3xl font-black leading-tight md:text-6xl">
+              <h2 className="mt-5 text-3xl font-black leading-tight md:text-5xl">
                 Empresa especializada em drywall, forro de gesso,
 forro modular, divisórias e acabamentos em São Paulo,
 Grande São Paulo e interior paulista.
