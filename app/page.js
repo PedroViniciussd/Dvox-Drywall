@@ -699,37 +699,36 @@ para clientes em São Paulo capital, Grande São Paulo e interior de SP.
       </section>
 
       <section
-        className="relative h-[70vh] overflow-hidden bg-cover bg-center bg-fixed text-white"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgba(6,17,31,.95), rgba(6,17,31,.72), rgba(6,17,31,.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/15" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/10" />
+  className="relative min-h-[70vh] overflow-hidden bg-cover bg-center text-white md:bg-fixed"
+  style={{
+    backgroundImage:
+      "linear-gradient(90deg, rgba(6,17,31,.96), rgba(6,17,31,.78), rgba(6,17,31,.45)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85')",
+  }}
+>
+  <div className="absolute inset-0 bg-black/20" />
 
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="max-w-7xl">
-              <span className="font-black uppercase tracking-[.25em] text-[#ef4444]">Drywall em São Paulo</span>
+  <div className="relative z-10 flex min-h-[70vh] items-center py-20 md:py-28">
+    <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
+      <div className="max-w-4xl">
+        <span className="text-xs font-black uppercase tracking-[.25em] text-[#ef4444] md:text-sm">
+          Drywall em São Paulo
+        </span>
 
-              <h2 className="mt-5 text-3xl font-black leading-tight md:text-5xl">
-                Empresa especializada em drywall, forro de gesso,
-forro modular, divisórias e acabamentos em São Paulo,
-Grande São Paulo e interior paulista.
-              </h2>
+        <h2 className="mt-5 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl">
+          Empresa especializada em drywall, forro de gesso, forro modular,
+          divisórias e acabamentos em São Paulo, Grande São Paulo e interior paulista.
+        </h2>
 
-              <p className="mt-6 text-lg leading-8 text-slate-100">
-A D/vox Drywall atua com instalação de drywall,
-forro modular, sancas, iluminação, divisórias,
-steel frame, reformas comerciais, obras prediais,
-galpões industriais e acabamentos residenciais
-em todo o estado de São Paulo.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <p className="mt-6 max-w-3xl text-base leading-8 text-slate-100 md:text-lg">
+          A D/vox Drywall atua com instalação de drywall, forro modular,
+          sancas, iluminação, divisórias, steel frame, reformas comerciais,
+          obras prediais, galpões industriais e acabamentos residenciais
+          em todo o estado de São Paulo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="relative z-10 bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 text-center md:px-6">
