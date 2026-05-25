@@ -420,7 +420,21 @@ function scrollProjects(direction) {
           Ver serviços
         </a>
       </div>
+<div className="mt-8 flex flex-wrap gap-4">
+  <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 backdrop-blur">
+    <p className="text-3xl font-black text-white">+10mil m²</p>
+    <span className="text-sm font-semibold text-slate-200">
+      em obras executadas com drywall
+    </span>
+  </div>
 
+  <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-4 backdrop-blur">
+    <p className="text-3xl font-black text-white">SP e Interior</p>
+    <span className="text-sm font-semibold text-slate-200">
+      atuação residencial, comercial, predial e industrial 
+    </span>
+  </div>
+</div>
       <div className="mt-10 flex flex-wrap gap-3">
         {[
           'Residencial',
