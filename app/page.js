@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaChevronLeft,
   FaChevronRight,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 
 const whatsapp =
@@ -95,13 +96,13 @@ const projects = [
     'Acabamento limpo e sofisticado',
   ],
 
-  images: Array.from({ length: 4 }, (_, index) => ({
+  images: Array.from({ length: 3 }, (_, index) => ({
     label:
       index === 0
         ? 'Execução do forro'
         : index === 1
           ? 'Acabamento técnico'
-          : index === 2
+          : index === 1
             ? 'Integração arquitetônica'
             : 'Projeto finalizado',
 
@@ -245,46 +246,76 @@ function scrollProjects(direction) {
     <main className="bg-[#f5f7fb] text-slate-900">
       <JsonLd />
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#06111f]/90 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6" aria-label="Menu principal">
-          <Logo />
+   <div className="fixed inset-x-0 top-0 z-50">
+  <div className="bg-[#d71920] px-4 py-2 text-white">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-xs font-bold sm:flex-row md:px-6">
+      <a href={whatsapp} className="flex items-center gap-2 transition hover:text-white/80">
+        <FaWhatsapp className="text-base" />
+        <span>(11) 96543-1342</span>
+      </a>
 
-          <div className="hidden items-center gap-8 text-sm font-bold text-white/80 md:flex">
-            <a href="#servicos" className="transition hover:text-white">Serviços</a>
-            <a href="#diferenciais" className="transition hover:text-white">Diferenciais</a>
-            <a href="#projetos" className="transition hover:text-white">Projetos</a>
-            <a href="#contato" className="transition hover:text-white">Contato</a>
-          </div>
+      <div className="flex items-center gap-2">
+        <FaMapMarkerAlt className="text-sm" />
+        <span>São Paulo - SP e Região</span>
+      </div>
+    </div>
+  </div>
 
-          <a
-            href={whatsapp}
-            className="rounded-full bg-[#d71920] px-5 py-3 text-sm font-black text-white shadow-[0_18px_45px_rgba(215,25,32,.35)] transition hover:-translate-y-0.5 hover:bg-red-700"
-          >
-            Orçamento
-          </a>
-        </nav>
-      </header>
+  <header className="border-b border-white/10 bg-[#06111f]/95 backdrop-blur-xl">
+    <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6" aria-label="Menu principal">
+      <div className="flex items-center gap-4">
+        <div className="flex h-[6.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
+          <img
+            src="/assets/dvox-logo.png"
+            alt="Logo D/vox Drywall São Paulo"
+            className="h-[6rem] w-auto object-contain"
+          />
+        </div>
+      </div>
+
+      <div className="hidden items-center gap-8 text-sm font-bold text-white/80 md:flex">
+        <a href="#servicos" className="transition hover:text-white">Serviços</a>
+        <a href="#diferenciais" className="transition hover:text-white">Diferenciais</a>
+        <a href="#projetos" className="transition hover:text-white">Projetos</a>
+        <a href="#contato" className="transition hover:text-white">Contato</a>
+      </div>
+
+      <a
+        href={whatsapp}
+        className="rounded-full bg-[#d71920] px-5 py-3 text-sm font-black text-white shadow-[0_18px_45px_rgba(215,25,32,.35)] transition hover:-translate-y-0.5 hover:bg-red-700"
+      >
+        Orçamento
+      </a>
+    </nav>
+  </header>
+</div>
 <section
   className="relative min-h-screen overflow-hidden bg-cover bg-center bg-fixed text-white"
   style={{
     backgroundImage:
-      "linear-gradient(90deg, rgba(6,17,31,.96), rgba(6,17,31,.78), rgba(6,17,31,.42)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85')",
+      "linear-gradient(90deg, rgb(6 17 31 / 53%), rgba(6, 17, 31, .78), rgba(6, 17, 31, .42)), url('/assets/dvox-home.jpg')",
   }}
 >
 
   {/* OVERLAYS */}
-  <div className="absolute inset-0 bg-black/35" />
+  <div className="absolute inset-0 bg-black/5" />
 
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(215,25,32,.28),transparent_30%),radial-gradient(circle_at_80%_50%,rgba(255,255,255,.10),transparent_28%)]" />
+ 
 
   {/* CONTEÚDO */}
   <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pb-20 pt-32 md:px-6">
     <div className="max-w-4xl">
-      <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.25em] text-white backdrop-blur">
-        Drywall e acabamentos em São Paulo
-      </span>
+<span className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.25em] text-white backdrop-blur mt-[4.5rem]">
+  
+  <span className="relative flex h-3 w-3">
+    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+    <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
+  </span>
 
-      <h1 className="mt-6 max-w-3xl text-4xl font-black leading-[1.08] tracking-tight text-white md:text-6xl">
+  Drywall e acabamentos em São Paulo
+</span>
+
+      <h1 className="mt-6 max-w-5xl text-4xl font-black leading-[1.08] tracking-tight text-white md:text-6xl">
         Drywall, forro e acabamentos para obras de todos os portes.
       </h1>
 
@@ -658,11 +689,11 @@ function scrollProjects(direction) {
                 </div>
               </div>
 
-              <img
-                src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=85"
-                alt="Ambiente residencial com acabamento moderno em drywall"
-                className="h-full min-h-[420px] w-full object-cover"
-              />
+<img
+  src="/assets/contato-dvox.jpg"
+  alt="Ambiente residencial com acabamento moderno em drywall"
+  className="h-full min-h-[420px] w-full object-cover"
+/>
             </div>
           </div>
         </div>
@@ -675,23 +706,15 @@ function scrollProjects(direction) {
     <div className="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-3">
       {/* LOGO + DESCRIÇÃO */}
       <div>
-        <div className="flex items-center gap-4">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-xl">
-            <span className="text-2xl font-black text-[#061b35]">
-              D<span className="text-[#d71920]">/</span>V
-            </span>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-black text-white">
-              D/vox Drywall
-            </h3>
-
-            <span className="text-xs font-bold uppercase tracking-[.25em] text-[#ef4444]">
-              São Paulo
-            </span>
-          </div>
-        </div>
+<div className="flex items-center gap-4">
+  <div className="flex h-[6.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
+    <img
+      src="/assets/dvox-logo.png"
+      alt="Logo D/vox Drywall São Paulo"
+      className="h-[6rem] w-auto object-contain"
+    />
+  </div>
+</div>
 
         <p className="mt-6 max-w-md leading-8 text-slate-300">
           D/vox Drywall São Paulo — Drywall, gesso, forro modular,
