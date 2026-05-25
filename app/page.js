@@ -199,7 +199,7 @@ function JsonLd() {
       addressRegion: 'SP',
       addressCountry: 'BR',
     },
-    url: 'https://dvoxdrywall.vercel.app',
+    url: 'https://dvoxdrywall.com.br',
     sameAs: ['https://www.instagram.com/dvoxdrywallsp/'],
     serviceType: services.map((item) => item.title),
   };

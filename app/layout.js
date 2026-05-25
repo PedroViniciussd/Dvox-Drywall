@@ -1,6 +1,6 @@
 import './globals.css';
 
-const siteUrl = 'https://dvoxdrywall.vercel.app';
+const siteUrl = 'https://dvoxdrywall.com.br';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

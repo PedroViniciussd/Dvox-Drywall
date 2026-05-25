@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://dvoxdrywall.vercel.app';
+  const baseUrl = 'https://dvoxdrywall.com.br';
 
   return [
     {
