@@ -1,6 +1,8 @@
 'use client';
-
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import {
   FaWhatsapp,
@@ -328,84 +330,7 @@ function scrollProjects(direction) {
     <main className="bg-[#f5f7fb] text-slate-900">
       <JsonLd />
 
-   <div className="fixed inset-x-0 top-0 z-50">
-  {/* TOP BAR */}
-  <div className="bg-[#d71920] px-4 py-2 text-white">
-    <div className="mx-auto flex max-w-7xl items-center justify-center gap-7 text-xs font-bold md:justify-between md:px-6">
-      <a href={whatsapp} className="flex items-center gap-2 transition hover:text-white/80">
-        <FaWhatsapp className="text-base" />
-        <span>(11) 96543-1342</span>
-      </a>
-
-      <span className="text-white/60 md:hidden">|</span>
-
-      <div className="flex items-center gap-2">
-        <FaMapMarkerAlt className="text-sm" />
-        <span>São Paulo - SP e Região</span>
-      </div>
-    </div>
-  </div>
-
-  {/* HEADER */}
-  <header className="border-b border-white/10 bg-[#06111f]/95 backdrop-blur-xl">
-    <nav
-      className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6"
-      aria-label="Menu principal"
-    >
-      <div className="flex items-center gap-4">
-        <div className="flex h-[5.5rem] w-[6.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl md:h-[6.5rem] md:w-[7.5rem]">
-          <img
-            src="/assets/dvox-logo.png"
-            alt="Logo D/vox Drywall São Paulo"
-            className="h-[5rem] w-auto object-contain md:h-[6rem]"
-          />
-        </div>
-      </div>
-
-      <div className="hidden items-center gap-8 text-sm font-bold text-white/80 md:flex">
-        <a href="#servicos" className="transition hover:text-white">Serviços</a>
-        <a href="#diferenciais" className="transition hover:text-white">Diferenciais</a>
-        <a href="#projetos" className="transition hover:text-white">Projetos</a>
-        <a href="#contato" className="transition hover:text-white">Contato</a>
-      </div>
-
-      <a
-        href={whatsapp}
-        className="hidden rounded-full bg-[#d71920] px-5 py-3 text-sm font-black text-white shadow-[0_18px_45px_rgba(215,25,32,.35)] transition hover:-translate-y-0.5 hover:bg-red-700 md:inline-flex"
-      >
-        Orçamento
-      </a>
-
-      <button
-        type="button"
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white md:hidden"
-        aria-label="Abrir menu"
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
-      </button>
-    </nav>
-
-    {menuOpen && (
-      <div className="border-t border-white/10 bg-[#06111f] px-4 py-5 md:hidden">
-        <div className="flex flex-col gap-4 text-sm font-bold text-white">
-          <a onClick={() => setMenuOpen(false)} href="#servicos">Serviços</a>
-          <a onClick={() => setMenuOpen(false)} href="#diferenciais">Diferenciais</a>
-          <a onClick={() => setMenuOpen(false)} href="#projetos">Projetos</a>
-          <a onClick={() => setMenuOpen(false)} href="#contato">Contato</a>
-
-          <a
-            onClick={() => setMenuOpen(false)}
-            href={whatsapp}
-            className="mt-2 rounded-full bg-[#d71920] px-5 py-3 text-center font-black text-white"
-          >
-            Solicitar orçamento
-          </a>
-        </div>
-      </div>
-    )}
-  </header>
-</div>
+  <Header />
 <section
   className="relative min-h-screen overflow-hidden bg-cover bg-center bg-fixed text-white"
   style={{
@@ -613,6 +538,179 @@ para clientes em São Paulo capital, Grande São Paulo e interior de SP.
           corporativas e industriais de diferentes portes.
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id='especialidades' className="relative overflow-hidden bg-[#f5f7fb] py-20 md:py-28">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(215,25,32,.08),transparent_45%)]" />
+
+  <div className="relative mx-auto max-w-7xl px-4 md:px-6">
+    <div className="mx-auto max-w-4xl text-center">
+      <span className="font-black uppercase tracking-[.25em] text-[#d71920]">
+        Especialidades D/vox Drywall
+      </span>
+
+      <h2 className="mt-4 text-3xl font-black leading-tight text-[#061b35] md:text-5xl">
+        Soluções em drywall, forro modular e acabamentos
+        para obras em São Paulo e região
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-slate-600">
+        Conheça nossas especialidades em drywall, divisórias,
+        forro modular, forro de gesso, steel frame e soluções
+        para obras residenciais, comerciais, corporativas,
+        industriais e prediais em São Paulo capital,
+        Grande São Paulo e interior paulista.
+      </p>
+    </div>
+
+    <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+      <Link
+        href="/drywall-em-sao-paulo"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Drywall SP
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Drywall em São Paulo
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Execução de drywall para residências, empresas,
+          escritórios, lojas, galpões e obras corporativas
+          em São Paulo capital, Grande SP e interior paulista.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/forro-modular-sp"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Forro Modular
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Forro modular SP
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Instalação de forro modular para empresas,
+          ambientes corporativos, escritórios, galpões
+          e obras comerciais em São Paulo.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/divisorias-drywall-sp"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Divisórias
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Divisórias em drywall
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Divisórias modernas em drywall para empresas,
+          escritórios, consultórios e ambientes comerciais
+          em São Paulo e região.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/forro-de-gesso-sp"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Gesso
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Forro de gesso SP
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Forro de gesso, sancas, iluminação embutida
+          e acabamentos modernos para obras residenciais
+          e comerciais em São Paulo.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/drywall-para-galpoes"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Galpões
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Drywall para galpões
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Soluções em drywall, divisórias e forro modular
+          para galpões industriais, áreas logísticas
+          e ambientes corporativos.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
+      <Link
+        href="/drywall-industrial-sp"
+        className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#d71920]/30 hover:shadow-2xl"
+      >
+        <span className="inline-flex rounded-full bg-[#d71920]/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-[#d71920]">
+          Industrial
+        </span>
+
+        <h3 className="mt-5 text-2xl font-black leading-tight text-[#061b35] transition group-hover:text-[#d71920]">
+          Drywall industrial SP
+        </h3>
+
+        <p className="mt-4 leading-8 text-slate-600">
+          Drywall industrial para empresas, fábricas,
+          centros logísticos e obras corporativas
+          em São Paulo e interior paulista.
+        </p>
+
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#061b35] transition group-hover:text-[#d71920]">
+          Ver página
+          <span>→</span>
+        </div>
+      </Link>
+
     </div>
   </div>
 </section>
@@ -836,146 +934,7 @@ para clientes em São Paulo capital, Grande São Paulo e interior de SP.
         </div>
       </section>
 
-<footer className="relative z-10 overflow-hidden bg-[#06111f]">
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(215,25,32,.18),transparent_40%)]" />
-
-  <div className="relative mx-auto max-w-7xl px-4 py-14 md:px-6">
-    <div className="grid gap-10 border-b border-white/10 pb-10 md:grid-cols-3">
-      {/* LOGO + DESCRIÇÃO */}
-      <div>
-<div className="flex items-center gap-4">
-  <div className="flex h-[6.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-2xl bg-white shadow-xl">
-    <img
-      src="/assets/dvox-logo.png"
-      alt="Logo D/vox Drywall São Paulo"
-      className="h-[6rem] w-auto object-contain"
-    />
-  </div>
-</div>
-
-        <p className="mt-6 max-w-md leading-8 text-slate-300">
-D/vox Drywall São Paulo — Empresa especializada em drywall,
-forro modular, divisórias, sancas, steel frame e acabamentos
-para obras residenciais, comerciais, corporativas, industriais
-e prediais em São Paulo capital, Grande São Paulo e interior paulista.
-        </p>
-      </div>
-
-      {/* CONTATO */}
-      <div>
-        <h4 className="text-sm font-black uppercase tracking-[.25em] text-[#ef4444]">
-          Contato
-        </h4>
-
-        <div className="mt-6 space-y-4">
-          <a
-            href="https://wa.me/5511965431342"
-            target="_blank"
-            className="flex items-center gap-3 text-slate-300 transition hover:text-white"
-          >
-<span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#25D366]">
-  <FaWhatsapp className="text-lg" />
-</span>
-
-            <div>
-              <p className="text-sm font-bold text-white">
-                WhatsApp
-              </p>
-
-              <span className="text-sm">
-                (11) 96543-1342
-              </span>
-            </div>
-          </a>
-
-          <a
-            href="mailto:diegodvox@gmail.com"
-            className="flex items-center gap-3 text-slate-300 transition hover:text-white"
-          >
-<span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white">
-  <FaEnvelope className="text-base" />
-</span>
-
-            <div>
-              <p className="text-sm font-bold text-white">
-                E-mail
-              </p>
-
-              <span className="text-sm">
-                diegodvox@gmail.com
-              </span>
-            </div>
-          </a>
-
-          <a
-            href="https://instagram.com/dvoxdrywallsp"
-            target="_blank"
-            className="flex items-center gap-3 text-slate-300 transition hover:text-white"
-          >
-  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[#E1306C]">
-  <FaInstagram className="text-lg" />
-</span>
-
-            <div>
-              <p className="text-sm font-bold text-white">
-                Instagram
-              </p>
-
-              <span className="text-sm">
-                @dvoxdrywallsp
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      {/* SERVIÇOS */}
-      <div>
-        <h4 className="text-sm font-black uppercase tracking-[.25em] text-[#ef4444]">
-          Especialidades
-        </h4>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          {[
-            'Forro em drywall',
-            'Forro modular',
-            'Drywall',
-            'Divisórias',
-            'Sancas',
-            'Iluminação',
-            'Reformas',
-            'Acabamento premium',
-          ].map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* BOTTOM */}
-    <div className="flex flex-col items-center justify-between gap-4 pt-8 text-center md:flex-row md:text-left">
-      <p className="text-sm text-slate-400">
-        © {new Date().getFullYear()} D/vox Drywall São Paulo. Todos os direitos reservados.
-      </p>
-
-      <p className="text-sm text-slate-400">
-        Desenvolvido por{' '}
-        <a
-          href="https://kinkajoudev.com.br"
-          target="_blank"
-          className="font-bold text-white transition hover:text-[#ef4444]"
-        >
-          Kinkajou Dev
-        </a>
-      </p>
-    </div>
-  </div>
-</footer>
+<Footer />
 
       {selectedProject && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-md">
