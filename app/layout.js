@@ -6,12 +6,13 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: 'D/vox Drywall São Paulo | Drywall, Forro Modular, Gesso e Reformas',
+    default:
+      'Drywall em São Paulo | Forro Modular, Gesso e Reformas - D/vox Drywall',
     template: '%s | D/vox Drywall São Paulo',
   },
 
   description:
-  'D/vox Drywall São Paulo: execução de drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo capital, Grande São Paulo e interior paulista.',
+    'D/vox Drywall São Paulo: execução de drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo capital, Grande São Paulo e interior paulista.',
 
   keywords: [
     'drywall em São Paulo',
@@ -35,13 +36,18 @@ export const metadata = {
   creator: 'D/vox Drywall São Paulo',
   publisher: 'D/vox Drywall São Paulo',
 
-icons: {
-  icon: [
-    { url: '/favicon.ico', type: 'image/x-icon' },
-  ],
-  shortcut: '/favicon.ico',
-  apple: '/favicon.ico',
-},
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      {
+        url: '/icon-512.png',
+        type: 'image/png',
+        sizes: '512x512',
+      },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/icon-512.png',
+  },
 
   robots: {
     index: true,
@@ -65,7 +71,7 @@ icons: {
     url: siteUrl,
     title: 'D/vox Drywall São Paulo | Acabamentos que transformam',
     description:
-  'Drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo, Grande São Paulo e interior paulista.',
+      'Drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo, Grande São Paulo e interior paulista.',
     siteName: 'D/vox Drywall São Paulo',
     images: [
       {
@@ -80,20 +86,45 @@ icons: {
   twitter: {
     card: 'summary_large_image',
     title: 'D/vox Drywall São Paulo | Drywall e Acabamentos',
-description:
-  'Drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo, Grande São Paulo e interior paulista.',
+    description:
+      'Drywall, forro modular, forro em gesso, divisórias, sancas, steel frame, reformas e acabamentos para obras residenciais, comerciais, industriais e prediais em São Paulo, Grande São Paulo e interior paulista.',
     images: ['/og-image-2026.jpg'],
   },
 };
 
 export default function RootLayout({ children }) {
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'D/vox Drywall São Paulo',
+    url: 'https://dvoxdrywall.com.br',
+    telephone: '+55 11 96543-1342',
+    image: 'https://dvoxdrywall.com.br/og-image-2026.jpg',
+    description:
+      'Empresa especializada em drywall, forro modular, divisórias, sancas e reformas em São Paulo.',
+    areaServed: [
+      'São Paulo',
+      'Grande São Paulo',
+      'Interior Paulista',
+    ],
+  };
+
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
         <meta name="theme-color" content="#07152b" />
         <meta name="format-detection" content="telephone=yes" />
 
+        <link rel="manifest" href="/manifest.json" />
+
         <script src="https://cdn.tailwindcss.com" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
 
         <script
           dangerouslySetInnerHTML={{
