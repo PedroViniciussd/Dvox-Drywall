@@ -12,7 +12,7 @@ export default function sitemap() {
   ];
 
   return pages.map((path) => ({
-    url: `${baseUrl}${path}`,
+    url: `${baseUrl}${path || '/'}`,
     lastModified: new Date(),
     changeFrequency: path === '' ? 'weekly' : 'monthly',
     priority: path === '' ? 1 : 0.9,
