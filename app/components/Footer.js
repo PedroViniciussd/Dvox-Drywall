@@ -57,7 +57,7 @@ export default function Footer() {
                   </p>
 
                   <span className="text-sm">
-                    (11) 96543-1342
+                    (11) 92685-1991
                   </span>
                 </div>
               </a>

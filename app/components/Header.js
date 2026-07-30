@@ -21,7 +21,7 @@ export default function Header() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-7 text-xs font-bold md:justify-between md:px-6">
           <a href={whatsapp} className="flex items-center gap-2 transition hover:text-white/80">
             <FaWhatsapp className="text-base" />
-            <span>(11) 96543-1342</span>
+            <span>(11) 92685-1991</span>
           </a>
 
           <span className="text-white/60 md:hidden">|</span>

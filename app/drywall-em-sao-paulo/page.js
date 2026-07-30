@@ -85,7 +85,7 @@ function ServiceJsonLd() {
     provider: {
       '@type': 'LocalBusiness',
       name: 'D/vox Drywall São Paulo',
-      telephone: '+55 11 96543-1342',
+      telephone: '+55 11 92685-1991',
       email: 'diegodvox@gmail.com',
       url: 'https://dvoxdrywall.com.br',
       address: {

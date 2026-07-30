@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
     '@type': 'LocalBusiness',
     name: 'D/vox Drywall São Paulo',
     url: 'https://dvoxdrywall.com.br',
-    telephone: '+55 11 96543-1342',
+    telephone: '+55 11 92685-1991',
     image: 'https://dvoxdrywall.com.br/og-image-2026.jpg',
     description:
       'Empresa especializada em drywall, forro modular, divisórias, sancas e reformas em São Paulo.',

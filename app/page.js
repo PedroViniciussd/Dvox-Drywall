@@ -197,7 +197,7 @@ function JsonLd() {
 
     areaServed: cities,
 
-    telephone: '+55 11 96543-1342',
+    telephone: '+55 11 92685-1991',
 
     email: 'diegodvox@gmail.com',
 
