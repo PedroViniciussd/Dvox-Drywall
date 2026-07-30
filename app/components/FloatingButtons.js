@@ -33,7 +33,7 @@ export default function FloatingButtons() {
     const text = `*${subject}*\n\n${message}`;
 
     window.open(
-      `https://wa.me/5511965431342?text=${encodeURIComponent(text)}`,
+      `https://wa.me/5511926851991?text=${encodeURIComponent(text)}`,
       '_blank'
     );
   }

@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 
 const whatsapp =
-  'https://wa.me/5511965431342?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20D%2Fvox%20Drywall%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.';
+  'https://wa.me/5511926851991?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20D%2Fvox%20Drywall%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -157,7 +157,7 @@ export default function ProjectsSection() {
                 </div>
 
                 <a
-                  href="https://wa.me/5511965431342"
+                  href="https://wa.me/5511926851991"
                   className="mt-6 inline-flex rounded-full bg-[#061b35] px-5 py-3 text-sm font-black text-white transition hover:bg-[#d71920]"
                 >
                   Solicitar orçamento
